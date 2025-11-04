@@ -1,0 +1,41 @@
+EMF Data Multicollinearity Analysis Report
+============================================================
+
+Original Dataset Shape: (4850, 9)
+Numerical Features: 8
+
+High Correlation Pairs (|r| >= 0.8):
+------------------------------------------------------------
+None found
+
+
+VIF Analysis (Original Features):
+------------------------------------------------------------
+             Feature       VIF
+      load_current_A 17.528122
+         H_field_A_m 13.311756
+       temperature_C  6.062384
+         E_field_V_m  5.269886
+distance_from_line_m  5.267926
+    humidity_percent  5.191371
+           sample_id  3.628863
+ vertical_distance_m  1.847029
+
+Features Removed Due to High VIF (> 10):
+------------------------------------------------------------
+  - load_current_A: VIF = 17.53
+
+VIF Analysis (After Feature Removal):
+------------------------------------------------------------
+             Feature      VIF
+         H_field_A_m 6.275219
+       temperature_C 5.553232
+    humidity_percent 4.967640
+         E_field_V_m 4.243205
+           sample_id 3.517798
+distance_from_line_m 3.237332
+ vertical_distance_m 1.796889
+
+
+Final Dataset Shape: (4850, 8)
+Features Retained: 7
