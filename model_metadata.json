@@ -1,0 +1,54 @@
+{
+    "best_models": {
+        "E_field": "XGBoost",
+        "H_field": "XGBoost"
+    },
+    "models_trained": [
+        "Random Forest",
+        "XGBoost",
+        "SVR",
+        "LightGBM"
+    ],
+    "hyperparameters": {
+        "Random Forest": {
+            "n_estimators": 200,
+            "max_depth": 15,
+            "min_samples_split": 5,
+            "min_samples_leaf": 2
+        },
+        "XGBoost": {
+            "n_estimators": 200,
+            "max_depth": 5,
+            "learning_rate": 0.1,
+            "subsample": 0.8
+        }
+    },
+    "features": [
+        "temperature_C",
+        "humidity_percent",
+        "load_current_A",
+        "distance_from_line_m",
+        "vertical_distance_m"
+    ],
+    "targets": [
+        "E_field_V_m",
+        "H_field_A_m"
+    ],
+    "E_field_performance": {
+        "XGBoost": {
+            "R2_Score": 0.9904795881652912,
+            "RMSE": 0.11793957395137489,
+            "MAE": 0.0564002534960792
+        }
+    },
+    "H_field_performance": {
+        "XGBoost": {
+            "R2_Score": 0.9936670493330824,
+            "RMSE": 0.08370161819009132,
+            "MAE": 0.054115829896048975
+        }
+    },
+    "training_samples": 3880,
+    "test_samples": 970,
+    "note": "Data was pre-normalized using StandardScaler. Input data must be normalized before prediction."
+}
